@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from math import sqrt, cos
 
+plt.rcParams["figure.figsize"] = (10, 5)
+
 PI = 3.141592653589793238462643383279502884197169
 
 def sign(x):
@@ -180,11 +182,15 @@ class SVM:
         '''
         Print plot
         '''
+#         fig, ax = plt.subplot()
+#         ax.spines['top'].set_visible(False)
+#         ax.spines['right'].set_visible(False)
         plt.plot([x*self.print_step for x in range(len(self.plot))], self.plot, 'r-')
         plt.plot([x*self.print_step for x in range(len(self.test_plot))], self.test_plot, 'g-')
         plt.ylabel('Accuracy')
         plt.xlabel('Epoch number')
         plt.axis([0, self.print_step*(len(self.plot)-1), 0, 1.05])
+        
         plt.show()
 
 
@@ -192,6 +198,7 @@ def print_dataset(data_file):
     '''
     A function printing a plot of a 2D dataset (no need to understand it)
     '''
+    plt.figure()
     datasets = ["data/dataset" + str(x) + ".txt" for x in range(1, 5)]
     if data_file not in datasets:
         print("Non-printable dataset!")
@@ -225,4 +232,5 @@ def print_dataset(data_file):
              [y/8 for y in range(17)] +
              [2 for y in range(17)] +
              [(2-y/8) for y in range(17)], 'b--')
+        
     plt.show()
