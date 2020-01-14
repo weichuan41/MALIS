@@ -19,3 +19,18 @@ Topics:
 
 **Due to: 18 Nov. 2019**
 ___
+
+#### Lab 3
+Topics:
+- SVM
+
+**Due to: 23 Dec. 2019**
+___
+
+#### Lab 4
+Topics:
+- Ensembles,
+- Random Forest
+
+**Due to: 17 Janv. 2020**
+___
